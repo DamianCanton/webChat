@@ -1,0 +1,11 @@
+.chatPages {
+    background-color: #fffbef;
+
+}
+
+.leftPanel {
+    width: 25%;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    float: left;
+}

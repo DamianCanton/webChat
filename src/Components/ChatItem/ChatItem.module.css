@@ -1,0 +1,32 @@
+
+.chatItem {
+    border-bottom: 2px solid var(--primary-color);
+    padding: 15px;
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.chatItem:hover {
+    background-color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.chatItem h4 {
+    margin: 0 0 8px 0;
+    color: var(--tertiary-color);
+    font-family: var(--primary-font);
+    font-size: 16px;
+}
+
+.chatItem p {
+    margin: 5px 0;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.chatItem span {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 14px;
+}
