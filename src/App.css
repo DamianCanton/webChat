@@ -1,18 +1,22 @@
 /*Estilos globales*/
 
 :root {
-    --primary-color:#f66600;
-    --secondary-color:#ffec54;
-    --tertiary-color: #095ea5;
-    --background-color: #fffbef;
-    --text-color:#112e30;
-    --primary-font: arial, sans-serif;
+  --primary-color: #f66600;
+  --secondary-color: #ffec54;
+  --tertiary-color: #095ea5;
+  --background-color: #fffbef;
+  --text-color: #112e30;
+  --primary-font: arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+* {
+  box-sizing: border-box;
 }
