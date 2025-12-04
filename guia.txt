@@ -1,0 +1,190 @@
+🚀 Roadmap & Arquitectura: Refactorización a Context API
+
+Base: Repositorio de Referencia (matu-dev-js) 
+
+
+Este documento detalla la transición de una arquitectura de props básica a una arquitectura profesional escalable basada en Context API para la gestión del estado global.
+
+1. Análisis de Arquitectura y Estructura 
+
+Estructura de Carpetas Objetivo
+El proyecto debe reflejar esta organización para separar responsabilidades :
+
+src/
+
+Components/
+
+
+ContactList/ → Consume ContactListContext 
+
+
+MessagesList/ → Renderiza la lista de burbujas de chat 
+
+
+NewMessageForm/ → Formulario de envío (invoca callback del Context) 
+
+Context/
+
+
+ContactListContext.jsx → Maneja la lista de contactos (Sidebar) 
+
+
+ContactDetailContext.jsx → Maneja el chat activo y envío de mensajes 
+
+Screens/
+
+
+HomeScreen/ → Vista inicial (Lista + Placeholder) 
+
+
+MessageScreen/ → Vista de chat (Lista + Chat + Form) 
+
+services/
+
+
+contactService.js → Simulación de fetch de datos (API) 
+
+
+App.jsx → Router y Providers 
+
+Patrones de Diseño Clave
+Esta arquitectura implementa tres patrones fundamentales:
+
+
+Context como "Store" (Separación de Intereses): 
+
+Desacopla la lógica de la vista. Los componentes (Screens) no saben cómo se buscan los datos ni cómo se agregan mensajes; solo consumen el contexto.
+
+
+Ejemplo: ContactDetailContext expone contactDetailed, isLoading y la función onCreateNewMessage.
+
+
+Layout Persistente (Simulado): 
+
+Tanto HomeScreen como MessageScreen renderizan <ContactList />. Esto crea la ilusión de una "Single Page Application" donde la barra lateral es fija mientras cambia el contenido principal.
+
+
+Simulación de Asincronía: 
+
+Uso de setTimeout dentro de los Contexts para simular latencia de red (Network latency) y manejo de estados de carga (isLoading).
+
+2. Roadmap de Implementación (Hitos) 
+
+Tu objetivo es refactorizar el código actual para adoptar estos patrones.
+
+✅ HITO 1: Contexto de Lista (Sidebar) 
+
+
+Objetivo: Que la lista de contactos sea global y accesible desde cualquier pantalla.
+
+
+Crear src/Context/ContactListContext.jsx: 
+
+Mover la lógica de getContacts() aquí.
+
+Crear los estados contactList y isLoading.
+
+Usar useEffect para cargar datos (simulando delay) .
+
+
+Refactorizar ContactList.jsx: 
+
+Eliminar recepción de props.
+
+Implementar useContext(ContactListContext).
+
+
+Provider en App.jsx: 
+
+Envolver las rutas con <ContactListContextProvider>.
+
+✅ HITO 2: Contexto de Detalle y Lógica de Chat 
+
+
+Objetivo: Manejar la conversación activa y el envío de mensajes (El "cerebro" del chat).
+
+
+
+Crear src/Context/ContactDetailContext.jsx: 
+
+Debe leer el ID de la URL usando useParams.
+
+Debe exponer la función onCreateNewMessage(text).
+
+
+Refactorizar MessageScreen.jsx: 
+
+Consumir contactDetailed y pasarlo a <MessagesList />.
+
+Pasar onCreateNewMessage a <NewMessageForm />.
+
+✅ HITO 3: El "Bot" (Respuesta Automática) 
+
+
+Objetivo: Cumplir con el requisito de respuesta automática.
+
+
+Ubicación: Dentro de ContactDetailContext.jsx, en la función onCreateNewMessage.
+
+Lógica:
+
+Agregar mensaje del usuario al estado.
+
+Lanzar un setTimeout.
+
+Dentro del timeout, agregar un nuevo mensaje con author: 'IA' (o nombre del contacto).
+
+✅ HITO 4: Funcionalidades Extras 
+
+
+Buscador (Search): 
+
+En ContactListContext, agregar estado searchQuery y función handleSearch.
+
+Filtrar el array contactList antes de pasarlo al Provider .
+
+
+Scroll Automático: 
+
+En MessagesList, usar un useRef para hacer scroll automático hacia abajo cuando llegue un nuevo mensaje .
+
+3. Tu Primera Misión: El Contexto de Detalle 
+
+Para conectar todo, el paso inmediato es crear el contexto que te falta.
+
+
+Tarea: Crea el archivo src/Context/ContactDetailContext.jsx basándote en el siguiente esqueleto.
+
+Nota Técnica: He corregido errores de sintaxis del PDF original (como espacios en nombres de funciones) para que el código sea funcional.
+
+JavaScript
+
+import { createContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getContactById } from "../Services/contactService"; // [cite: 74]
+
+export const ContactDetailContext = createContext(); // [cite: 75]
+
+export const ContactDetailContextProvider = ({ children }) => { // [cite: 76]
+    const { contact_id } = useParams();
+    const [contactDetailed, setContactDetailed] = useState(null); // [cite: 77]
+
+    useEffect(() => {
+        // Lógica para cargar el contacto cuando cambia contact_id
+        const data = getContactById(contact_id); // [cite: 79]
+        setContactDetailed(data); // [cite: 80]
+    }, [contact_id]); // [cite: 81]
+
+    const handleAddNewMessage = (text) => { // [cite: 82]
+        // Aquí va la lógica para agregar mensaje y luego la respuesta del bot
+        console.log("Nuevo mensaje:", text); // [cite: 84]
+        
+        // TODO: Implementar lógica de estado y setTimeout para Hito 3
+    };
+
+    return (
+        <ContactDetailContext.Provider value={{ contactDetailed, handleAddNewMessage }}>
+            {children}
+        </ContactDetailContext.Provider> // [cite: 88]
+    );
+};
