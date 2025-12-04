@@ -144,9 +144,6 @@ En ContactListContext, agregar estado searchQuery y función handleSearch.
 Filtrar el array contactList antes de pasarlo al Provider .
 
 
-Scroll Automático: 
-
-En MessagesList, usar un useRef para hacer scroll automático hacia abajo cuando llegue un nuevo mensaje .
 
 3. Tu Primera Misión: El Contexto de Detalle 
 
