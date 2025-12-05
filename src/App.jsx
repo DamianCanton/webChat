@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import ChatPage from './Screens/ChatPage/ChatPage'
 import { Routes, Route } from 'react-router-dom'

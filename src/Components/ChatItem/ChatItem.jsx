@@ -1,30 +1,21 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import styles from './ChatItem.module.css'
-import { getContacts } from '../../Services/contactService'
+import React from "react";
 
-const ChatItem = ({Avatar, Name, Id, LastMessage, Status}) => {
-    
-    const [ contact, setContact] = useState()
-
-    function loadContact() {
-        const contact = getContacts()
-        setContact(contact)
-    }
-        useEffect(() => {
-            loadContact()
-        }, []) 
+import styles from "./ChatItem.module.css";
 
 
+const ChatItem = ({ Avatar, Name, Id, LastMessage, Status}) => {
     return (
-    <div className={styles.chatItem}>
-        <img src={Avatar}/>
-        <h4>{Name}</h4>
-        <p>ID: {Id}</p>
-        <p>Ultimo mensaje: {LastMessage.message}</p>
-        <span> Estado: {Status}</span>
-    </div>
-    )
-}
+        <div className={styles.chatItem}>
+            <img src={Avatar} alt={Name} className={styles.avatar} />
+            <div className={styles.content}>
+                <div className={styles.header}>
+                    <h5 className={styles.name}>{Name}</h5>
+                    <span className={styles.status}>{Status}</span>
+                </div>
+                <p className={styles.message}>{LastMessage.message}</p>
+            </div>
+        </div>
+    );
+};
 
-export default ChatItem
+export default ChatItem;

@@ -1,4 +1,5 @@
-import { useEffect } from "react"
+import { useEffect, useState, createContext } from "react";
+import { getContacts } from "../Services/contactService";
 
 
 export const ContactListContext = createContext(
@@ -16,7 +17,7 @@ const ContactListContextProvider = (props) => {
         setIsContactListLoading(true)
         setTimeout(
             () => {
-                const contact_list_response = getAllContacts()
+                const contact_list_response = getContacts()
                 setContactList(contact_list_response)
                 setIsContactListLoading(false)
             },

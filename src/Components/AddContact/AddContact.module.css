@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border: 2px solid var(--text-color);
+  background-color: var(--primary-color);
+  box-shadow: 4px 4px 0px var(--text-color);
+}
+
+.formContent label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.formContent input {
+  padding: 0.5rem;
+  border: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: inherit;
+  outline: none;
+}
+
+.formContent input:focus {
+  box-shadow: 2px 2px 0px var(--text-color);
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--text-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--text-color);
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--text-color);
+}
+
+.button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--text-color);
+}

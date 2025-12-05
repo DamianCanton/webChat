@@ -3,12 +3,12 @@
   height: 100vh;
   background-color: var(--background-color);
   border: 2px solid var(--text-color);
-  overflow: hidden; /* Prevent double scrollbars */
+  overflow: hidden; 
 }
 
 .leftPanel {
   width: 350px;
-  min-width: 300px; /* Prevent it from getting too small */
+  min-width: 300px;
   border-right: 2px solid var(--text-color);
   display: flex;
   flex-direction: column;
@@ -16,17 +16,7 @@
   overflow-y: auto;
 }
 
-.leftPanel h3 {
-  padding: 1rem;
-  margin: 0;
-  text-align: center;
-  border-bottom: 2px solid var(--text-color);
-  background-color: var(--secondary-color);
-  box-shadow: 0px 4px 0px var(--text-color);
-  position: sticky;
-  top: 0;
-  z-index: 10; /* Ensure it stays above list items */
-}
+
 
 .rightPanel {
   flex-grow: 1;
@@ -35,7 +25,6 @@
   align-items: center;
   padding: 2rem;
   background-color: var(--background-color);
-  position: relative; /* For absolute positioning if needed */
 }
 
 .rightPanel h2 {
@@ -46,7 +35,17 @@
   text-align: center;
 }
 
-/* Responsive Design */
+.title {
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+    border-bottom: 2px solid var(--text-color);
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 0px var(--text-color);
+    position: sticky;
+
+}
+
 @media (max-width: 768px) {
   .chatPage {
     flex-direction: column;
@@ -59,6 +58,8 @@
   }
 
   .rightPanel {
-    display: none; /* Hide right panel on mobile for now, or toggle */
+    display: none;
   }
 }
+
+
