@@ -1,18 +1,17 @@
-import React from 'react'
-import styles from './SearchBar.module.css'
+import React from "react";
+import styles from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
     return (
-    <div>
-        <span className={styles.searchIcon}>🔍</span>
-                        <input
-                            type="search"
-                            placeholder="Buscar en el blog..."
-                            className={styles.searchInput}
-                            // Dejamos la lógica (onChange, value) para más adelante
-                        />
-    </div>
-    )
-}
+        <div>
+        <input
+            type="search"
+            placeholder="Buscar en el blog..."
+            className={styles.searchInput}
+            onChange={(e) => onSearch(e.target.value)}
+        />
+        </div>
+    );
+};
 
-export default SearchBar
+export default SearchBar;

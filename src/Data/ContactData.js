@@ -12,6 +12,7 @@ const mockChats = [
                     id: "1",
                     message: "Holaa como estas?",
                     author_id: "1",
+                    author_name: 'Juan Perez',
                     created_at: "Hoy",
                     status: "Enviado"
                 }
@@ -29,6 +30,7 @@ const mockChats = [
                     id: "2",
                     message: "Nos vemos mañana.",
                     author_id: "2",
+                    author_name: 'Maria Garcia',
                     created_at: "Hoy",
                     status: "Recibido"
                 }
@@ -46,6 +48,7 @@ const mockChats = [
                     id: "3",
                     message: "Perfecto, gracias!",
                     author_id: "3",
+                    author_name: 'Carlos Rodriguez',
                     created_at: "Ayer",
                     status: "Leído"
                 }
@@ -63,6 +66,7 @@ const mockChats = [
                     id: "4",
                     message: "¿Recibiste el archivo?",
                     author_id: "4",
+                    author_name: 'Ana Lopez',
                     created_at: "Hoy",
                     status: "Enviado"
                 }
@@ -80,6 +84,7 @@ const mockChats = [
                     id: "5",
                     message: "Te llamo más tarde.",
                     author_id: "5",
+                    author_name: 'Laura Martinez',
                     created_at: "Hoy",
                     status: "No leído"
                 }
@@ -97,6 +102,7 @@ const mockChats = [
                     id: "6",
                     message: "Confirmado para el viernes.",
                     author_id: "6",
+                    author_name: 'Pedro Sanchez',
                     created_at: "Ayer",
                     status: "Leído"
                 }

@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
+import MessagesList from "../MessagesList/MessagesList";
+import CreateNewMessage from "../CreateNewMessages/CreateNewMessage";
 
-
-const ChatDetail = ({chatDetail}) => {
+const ChatDetail = ({chatDetail, createNewMessage}) => {
     
     
     return (
     <div>
         <h2>{chatDetail.name}</h2>
-        <p>{chatDetail.id}</p>
+        <MessagesList messages={chatDetail.LastMessage} />
+        <CreateNewMessage createNewMessage={createNewMessage} />
     </div>
     )
 }

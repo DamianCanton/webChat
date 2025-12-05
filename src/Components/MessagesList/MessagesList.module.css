@@ -1,0 +1,53 @@
+.messagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.messageBubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #dcf8c6; /* WhatsApp-like green */
+  color: #000;
+  border-bottom-right-radius: 0;
+}
+
+.received {
+  align-self: flex-start;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #e0e0e0;
+  border-bottom-left-radius: 0;
+}
+
+.authorName {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.messageContent {
+  margin: 0;
+  font-size: 1em;
+}
+
+.messageMeta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  font-size: 0.7em;
+  color: #888;
+}
