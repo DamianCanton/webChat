@@ -1,7 +1,10 @@
 import React from 'react'
 import styles from './AddContact.module.css'
+import { useContext } from 'react'
+import { ContactContext } from '../../Context/ContactContext'
 
-export const AddContact = ({addNewContact}) => {
+export const AddContact = () => {
+    const { addNewContact } = useContext(ContactContext)
     const handleSubmitNewContactForm = (event) => {
         event.preventDefault();
         const formulario = event.target

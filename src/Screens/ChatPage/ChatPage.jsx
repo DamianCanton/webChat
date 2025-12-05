@@ -8,15 +8,13 @@ import { useParams } from "react-router";
 
 const ChatPage = () => {
     const { contact_id } = useParams()
-    const {
-        loading,
-        setSearchQuery,
-        addNewContact,
-        selectedChat,
-        createNewMessage,
-        filteredContacts,
-        setContactId,
-    } = useContext(ContactContext);
+  const {
+    loading,
+    addNewContact,
+    selectedChat,
+    filteredContacts,
+    setContactId,
+  } = useContext(ContactContext);
     useEffect (
         () => {
             setContactId(contact_id)
@@ -28,7 +26,7 @@ const ChatPage = () => {
         <div className={styles.chatPage}>
         <aside className={styles.leftPanel}>
             <h3 className={styles.title}>Chats</h3>
-            <SearchBar onSearch={setSearchQuery} />
+            <SearchBar />
             <ChatList
             contacts={filteredContacts}
             loading={loading}
@@ -36,14 +34,7 @@ const ChatPage = () => {
             />
         </aside>
         <main className={styles.rightPanel}>
-            {selectedChat ? (
-            <ChatDetail
-                chatDetail={selectedChat}
-                createNewMessage={createNewMessage}
-            />
-            ) : (
-            <h2>Ningun chat seleccionado</h2>
-            )}
+            {selectedChat ? <ChatDetail /> : <h2>Ningun chat seleccionado</h2>}
         </main>
         </div>
     );

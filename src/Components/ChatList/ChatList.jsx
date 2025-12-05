@@ -3,13 +3,16 @@ import styles from "./ChatList.module.css";
 import ChatItem from "../ChatItem/ChatItem";
 import { Link } from "react-router";
 import { AddContact } from "../AddContact/AddContact";
+import { useContext } from "react";
+import { ContactContext } from "../../Context/ContactContext";
 
-const ChatList = ({ contacts, loading, addNewContact }) => {
+const ChatList = () => {
+    const { filteredContacts, loading } = useContext(ContactContext);
     return (
         <div className={styles.chatList}>
         {loading ? <p className={styles.loading}>Cargando contactos...</p> : null}
-        {contacts &&
-            contacts.map((contact) => (
+        {filteredContacts &&
+            filteredContacts.map((contact) => (
             <Link
                 to={"/chat/" + contact.id}
                 key={contact.id}
@@ -25,7 +28,7 @@ const ChatList = ({ contacts, loading, addNewContact }) => {
                 <hr />
             </Link>
             ))}
-        <AddContact addNewContact={addNewContact} />
+        <AddContact />
         </div>
     );
 };
