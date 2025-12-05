@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./ChatItem.module.css";
 
 
-const ChatItem = ({ Avatar, Name, Id, LastMessage, Status}) => {
+const ChatItem = ({ Avatar, Name, LastMessage, Status}) => {
     return (
         <div className={styles.chatItem}>
             <img src={Avatar} alt={Name} className={styles.avatar} />

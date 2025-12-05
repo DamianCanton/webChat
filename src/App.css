@@ -1,12 +1,19 @@
-/*Estilos globales*/
 
 :root {
+
   --primary-color: #f66600;
   --secondary-color: #ffec54;
   --tertiary-color: #095ea5;
   --background-color: #fffbef;
   --text-color: #112e30;
-  --primary-font: arial, sans-serif;
+  --primary-font: "Courier New", Courier, monospace; 
+  --border-thickness: 2px;
+  --border-color: #000000;
+  --shadow-offset: 4px;
+  --shadow-color: #000000;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 }
 
 body {
@@ -15,8 +22,58 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--primary-font);
+  overflow-x: hidden; 
 }
 
 * {
   box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--background-color);
+  border-left: var(--border-thickness) solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: var(--border-thickness) solid var(--border-color);
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: var(--border-thickness) solid var(--border-color);
+  background-color: var(--secondary-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+  transition: all 0.1s ease-in-out;
+  font-weight: bold;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+
+input,
+textarea {
+  font-family: inherit;
+  border: var(--border-thickness) solid var(--border-color);
+  padding: 10px;
+  outline: none;
+  background-color: white;
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+input:focus,
+textarea:focus {
+  background-color: #fff;
+  box-shadow: 4px 4px 0px var(--shadow-color);
 }

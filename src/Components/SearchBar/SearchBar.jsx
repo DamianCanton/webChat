@@ -5,7 +5,7 @@ import { ContactContext } from "../../Context/ContactContext";
 const SearchBar = () => {
   const { setSearchQuery } = useContext(ContactContext);
   return (
-    <div>
+    <div className={styles.searchBarContainer}>
       <input
         type="search"
         placeholder="Buscar en el blog..."

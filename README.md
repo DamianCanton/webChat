@@ -1,16 +1,76 @@
-# React + Vite
+# WebChat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Estilo Retro | Arquitectura Limpia | Sin Backend**
 
-Currently, two official plugins are available:
+WebChat es una aplicación de mensajería moderna construida con **React** y **Vite**, diseñada con una estética **Retro** audaz (bordes gruesos, sombras duras, alto contraste). Simula una experiencia de chat completa utilizando **Context API** para el manejo del estado global, sin necesidad de un backend real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 🎓 **Primer proyecto desarrollado como Trabajo Final Integrador para la Diplomatura Full Stack de la UTN BA (Centro de e-Learning).**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Diseño Retro**: Una interfaz visualmente impactante con bordes negros marcados y sombras sólidas.
+- **Respuestas Automáticas**: Simulación de chat con un bot que responde automáticamente.
+- **Búsqueda de Contactos**: Filtra tus conversaciones rápidamente desde la barra de búsqueda.
+- **Responsive**: Adaptable a dispositivos móviles y de escritorio.
+- **Persistencia Simulada**: Gestión de estado local para contactos y mensajes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Instalación y Uso
+
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+1.  **Clonar el repositorio**:
+
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd webChat
+    ```
+
+2.  **Instalar dependencias**:
+
+    ```bash
+    npm install
+    ```
+
+3.  **Correr el servidor de desarrollo**:
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## Estructura del Proyecto
+
+Una vista simplificada de la organización del código:
+
+```
+src/
+├── Components/       # Componentes reutilizables de la UI
+│   ├── AddContact/
+│   ├── ChatDetail/
+│   ├── ChatItem/
+│   ├── ChatList/
+│   ├── CreateNewMessages/
+│   ├── MessagesList/
+│   └── SearchBar/
+├── Context/          # Manejo del estado global
+│   └── ContactContext.jsx
+├── Screens/          # Vistas principales de la aplicación
+│   └── ChatPage/
+├── App.jsx           # Componente raíz y configuración de rutas
+└── main.jsx          # Punto de entrada
+```
+
+---
+
+## Tecnologías
+
+- **React** (v19)
+- **Vite**
+- **CSS Modules**
+- **React Router**
+
+---

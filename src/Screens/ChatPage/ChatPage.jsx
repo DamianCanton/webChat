@@ -7,7 +7,7 @@ import { ContactContext } from "../../Context/ContactContext";
 import { useParams } from "react-router";
 
 const ChatPage = () => {
-    const { contact_id } = useParams()
+  const { contact_id } = useParams();
   const {
     loading,
     addNewContact,
@@ -15,29 +15,28 @@ const ChatPage = () => {
     filteredContacts,
     setContactId,
   } = useContext(ContactContext);
-    useEffect (
-        () => {
-            setContactId(contact_id)
-        },
-        [contact_id]
-    )
+  useEffect(() => {
+    setContactId(contact_id);
+  }, [contact_id]);
 
-    return (
-        <div className={styles.chatPage}>
-        <aside className={styles.leftPanel}>
-            <h3 className={styles.title}>Chats</h3>
-            <SearchBar />
-            <ChatList
-            contacts={filteredContacts}
-            loading={loading}
-            addNewContact={addNewContact}
-            />
-        </aside>
-        <main className={styles.rightPanel}>
-            {selectedChat ? <ChatDetail /> : <h2>Ningun chat seleccionado</h2>}
-        </main>
-        </div>
-    );
+  return (
+    <div
+      className={`${styles.chatPage} ${selectedChat ? styles.showDetail : ""}`}
+    >
+      <aside className={styles.leftPanel}>
+        <h3 className={styles.title}>Chats</h3>
+        <SearchBar />
+        <ChatList
+          contacts={filteredContacts}
+          loading={loading}
+          addNewContact={addNewContact}
+        />
+      </aside>
+      <main className={styles.rightPanel}>
+        {selectedChat ? <ChatDetail /> : <h2>Ningun chat seleccionado</h2>}
+      </main>
+    </div>
+  );
 };
 
 export default ChatPage;

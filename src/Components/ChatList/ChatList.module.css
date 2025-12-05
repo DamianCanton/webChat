@@ -3,7 +3,8 @@
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  padding-bottom: 1rem;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .loading {
@@ -11,8 +12,15 @@
   padding: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+  margin: 1rem;
 }
 
 .link {
   text-decoration: none;
+  color: inherit;
+  display: block;
 }

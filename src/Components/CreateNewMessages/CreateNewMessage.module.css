@@ -1,0 +1,55 @@
+.createMessageContainer {
+  padding: 1rem 2rem;
+  background-color: var(--background-color);
+  border-top: var(--border-thickness) solid var(--border-color);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+  outline: none;
+  font-family: var(--primary-font);
+  transition: all 0.1s ease-in-out;
+}
+
+.input:focus {
+  background-color: white;
+  box-shadow: 6px 6px 0px var(--shadow-color);
+  transform: translate(-2px, -2px);
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: white;
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--tertiary-color);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}

@@ -1,23 +1,22 @@
-.searchIcon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+.searchBarContainer {
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-bottom: var(--border-thickness) solid var(--border-color);
 }
 
 .searchInput {
-  flex-grow: 1;
-  padding: 0.5rem;
-  border: 2px solid var(--text-color);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--primary-font);
+  width: 100%;
+  padding: 12px;
   font-size: 1rem;
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
   outline: none;
-  box-shadow: 2px 2px 0px var(--text-color);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  font-family: var(--primary-font);
 }
 
 .searchInput:focus {
-  box-shadow: 4px 4px 0px var(--tertiary-color);
-  transform: translate(-1px, -1px);
+  background-color: white;
+  box-shadow: 6px 6px 0px var(--shadow-color);
+  transform: translate(-2px, -2px);
 }

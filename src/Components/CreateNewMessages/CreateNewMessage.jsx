@@ -1,28 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ContactContext } from "../../Context/ContactContext";
+import styles from "./CreateNewMessage.module.css";
 
 const CreateNewMessage = () => {
-    const { createNewMessage} = useContext(ContactContext);
+  const { createNewMessage } = useContext(ContactContext);
+  const [message, setMessage] = useState("");
 
-    const handleSubmit = (event) => {
-            event.preventDefault()
-            const formulario = event.target
-            const message_value = formulario.message.value
-            createNewMessage(message_value)
-            formulario.reset()
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!message.trim()) return;
 
-    return (
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="message">Mensaje</label>
-        <textarea
-            name="message"
-            id="message"
-            placeholder="Ingrese el mensaje"
-        ></textarea>
-        <button type="submit">Enviar</button>
-        </form>
-    );
+    createNewMessage(message);
+    setMessage("");
+  };
+
+  return (
+    <div className={styles.createMessageContainer}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          placeholder="Escribe un mensaje..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className={styles.input}
+        />
+        <button type="submit" className={styles.button}>
+          Enviar
+        </button>
+      </form>
+    </div>
+  );
 };
 
-export default CreateNewMessage
+export default CreateNewMessage;

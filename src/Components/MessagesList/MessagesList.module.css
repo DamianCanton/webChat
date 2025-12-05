@@ -1,53 +1,59 @@
 .messagesContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 1rem;
   height: 100%;
   overflow-y: auto;
+  background-color: var(--background-color);
 }
 
 .messageBubble {
   max-width: 70%;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 1rem;
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
   position: relative;
   word-wrap: break-word;
+  font-family: var(--primary-font);
 }
 
 .sent {
   align-self: flex-end;
-  background-color: #dcf8c6; /* WhatsApp-like green */
-  color: #000;
-  border-bottom-right-radius: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 12px 12px 0 12px;
 }
 
 .received {
   align-self: flex-start;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #e0e0e0;
-  border-bottom-left-radius: 0;
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 12px 12px 12px 0;
 }
 
 .authorName {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #555;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
 .messageContent {
   margin: 0;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .messageMeta {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5px;
-  margin-top: 5px;
-  font-size: 0.7em;
-  color: #888;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-weight: bold;
 }
