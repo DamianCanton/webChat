@@ -21,8 +21,8 @@ const MessagesList = ({ messages }) => {
               )}
               <p className={styles.messageContent}>{message.message}</p>
               <div className={styles.messageMeta}>
-                <span>{message.created_at}</span>
-                <span>
+                <span className={styles.timestamp}>{message.created_at}</span>
+                <span className={styles.status}>
                   {message.status === "VISTO" ? (
                     <span> Leido </span>
                   ) : (

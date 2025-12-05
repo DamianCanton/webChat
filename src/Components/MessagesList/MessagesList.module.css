@@ -55,5 +55,17 @@
   font-size: 0.7rem;
   color: var(--text-color);
   opacity: 0.8;
+}
+
+.timestamp {
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.status {
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  opacity: 1;
 }

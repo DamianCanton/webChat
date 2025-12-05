@@ -25,9 +25,9 @@
   letter-spacing: 1px;
 }
 
-/* Back button for mobile (optional, but good for UX) */
+
 .backButton {
-  display: none; /* Hidden by default on desktop */
+  display: none; 
   background: none;
   border: none;
   font-size: 1.5rem;
